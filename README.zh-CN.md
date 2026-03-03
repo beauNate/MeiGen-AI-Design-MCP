@@ -34,7 +34,7 @@
 一个开源 MCP Server（通过插件市场安装），通过 8 个 tools 和精心设计的 skills，让 LLM 具备创意和审美能力，可以完成更复杂的设计任务。它能让 LLM 了解各种生图模型的使用技巧，通过参考图和多方案并行，交付更专业的成果。
 
 - 可以调用本地 ComfyUI 服务，不依赖外部 API；也可以方便地接入任意自定义 API
-- 内置 1,300+ 优质提示词模板和精心调试的提示词撰写技巧，把需求转化为具象的生图任务
+- 内置 1,500+ 优质提示词模板（来自 [nanobanana-trending-prompts](https://github.com/jau123/nanobanana-trending-prompts)）和精心调试的提示词撰写技巧，把需求转化为具象的生图任务
 - 支持并行批量任务和子 Agent 调用，避免主窗口上下文膨胀
 
 ---
@@ -153,7 +153,7 @@ npx meigen init claude      # Claude Code（项目级）
 
 | 工具 | 免费 | 说明 |
 |------|------|------|
-| `search_gallery` | 是 | 搜索 1,300+ 精选热门提示词，附带视觉预览 |
+| `search_gallery` | 是 | 搜索 1,500+ 精选热门提示词，附带视觉预览（数据来自 [nanobanana-trending-prompts](https://github.com/jau123/nanobanana-trending-prompts)） |
 | `get_inspiration` | 是 | 获取某条提示词的完整内容、所有图片和元数据 |
 | `enhance_prompt` | 是 | 将简短想法转化为专业图片提示词 |
 | `list_models` | 是 | 列出所有已配置后端的可用模型 |

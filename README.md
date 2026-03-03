@@ -34,7 +34,7 @@
 An open-source MCP Server (installed via plugin marketplace) that gives LLMs creative and aesthetic capabilities through 8 tools and carefully designed skills, enabling them to handle complex design tasks. It teaches LLMs how to use various image generation models effectively, delivering professional results through reference images and multi-direction parallel workflows.
 
 - Works with local ComfyUI — no external API dependency; also easily integrates with any custom API
-- Built-in 1,300+ curated prompt templates and fine-tuned prompt engineering techniques that turn requirements into concrete image generation tasks
+- Built-in 1,500+ curated prompt templates from [nanobanana-trending-prompts](https://github.com/jau123/nanobanana-trending-prompts) and fine-tuned prompt engineering techniques that turn requirements into concrete image generation tasks
 - Parallel batch generation and sub-agent execution to keep the main context window clean
 
 ---
@@ -153,7 +153,7 @@ Add to your MCP config (e.g. `.mcp.json`, `claude_desktop_config.json`):
 
 | Tool | Free | Description |
 |------|------|-------------|
-| `search_gallery` | Yes | Search 1,300+ curated trending prompts with visual previews |
+| `search_gallery` | Yes | Search 1,500+ curated trending prompts with visual previews (powered by [nanobanana-trending-prompts](https://github.com/jau123/nanobanana-trending-prompts)) |
 | `get_inspiration` | Yes | Get full prompt, all images, and metadata for any gallery entry |
 | `enhance_prompt` | Yes | Transform a brief idea into a professional image prompt |
 | `list_models` | Yes | List available models across all configured providers |
