@@ -123,6 +123,12 @@ This writes the correct MCP config file with the right format and path for your 
 
 ### OpenClaw
 
+Install from [ClawHub](https://clawhub.ai/jau123/creative-toolkit), or use the CLI:
+
+```bash
+npx clawhub@latest install creative-toolkit
+```
+
 Our skills follow the [Agent Skills](https://agentskills.io) open standard — copy them into your OpenClaw workspace and they work directly. For MCP tools, use OpenClaw's MCP adapter to connect the MeiGen server.
 
 ### Other MCP-Compatible Hosts
