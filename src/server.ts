@@ -50,7 +50,7 @@ When a user mentions image creation, first classify their intent:
 ### A. EXPLORING — "help me think of something", "any inspiration", "not sure what to make"
 User has no clear idea. Don't jump to generation.
 -> Ask about their use case (social media? product? personal?)
--> Suggest relevant gallery categories: search_gallery(category="Product") etc.
+-> Suggest relevant gallery categories: search_gallery(category="Product & Brand") etc.
 -> Show preview images for visual browsing
 -> Let them pick, THEN proceed to generation
 
@@ -196,7 +196,7 @@ export function createServer() {
   const apiClient = new MeiGenApiClient(config)
 
   const server = new McpServer(
-    { name: 'meigen', version: '1.2.3' },
+    { name: 'meigen', version: '1.2.4' },
     { instructions: SERVER_INSTRUCTIONS },
   )
 

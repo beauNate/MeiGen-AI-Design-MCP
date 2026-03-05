@@ -27,9 +27,22 @@ export interface TrendingPrompt {
   source_url: string
 }
 
-export type PromptCategory = '3D' | 'App' | 'Food' | 'Girl' | 'JSON' | 'Other' | 'Photograph' | 'Product'
+export type PromptCategory = 'Illustration & 3D' | 'App' | 'Food & Drink' | 'Girl' | 'JSON' | 'Other' | 'Photography' | 'Product & Brand'
 
-export const ALL_CATEGORIES: PromptCategory[] = ['3D', 'App', 'Food', 'Girl', 'JSON', 'Other', 'Photograph', 'Product']
+export const ALL_CATEGORIES: PromptCategory[] = ['Illustration & 3D', 'App', 'Food & Drink', 'Girl', 'JSON', 'Other', 'Photography', 'Product & Brand']
+
+/** Map legacy DB values to new display names */
+const CATEGORY_DISPLAY_MAP: Record<string, PromptCategory> = {
+  '3D': 'Illustration & 3D',
+  'Food': 'Food & Drink',
+  'Photograph': 'Photography',
+  'Product': 'Product & Brand',
+}
+
+/** Convert legacy category name to display name */
+export function mapCategory(raw: string): string {
+  return CATEGORY_DISPLAY_MAP[raw] || raw
+}
 
 // ============================================================
 // Data Loading (lazy, singleton)
@@ -50,7 +63,12 @@ function loadPrompts(): TrendingPrompt[] {
   if (_prompts) return _prompts
   try {
     const content = readFileSync(getDataPath(), 'utf-8')
-    _prompts = JSON.parse(content) as TrendingPrompt[]
+    const raw = JSON.parse(content) as TrendingPrompt[]
+    // Map legacy DB category names to new display names
+    _prompts = raw.map(p => ({
+      ...p,
+      categories: p.categories.map(mapCategory),
+    }))
     return _prompts
   } catch (e) {
     console.error('Failed to load trending prompts:', e)
