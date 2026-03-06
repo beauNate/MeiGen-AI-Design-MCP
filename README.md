@@ -103,7 +103,7 @@ To unlock image generation, run the setup wizard:
 ```
 
 The wizard walks you through:
-1. **Choose a provider** — local ComfyUI, MeiGen Cloud, or OpenAI-compatible API
+1. **Choose a provider** — local ComfyUI, MeiGen Cloud, or any OpenAI-compatible API (bring your own key & endpoint)
 2. **Enter credentials** — ComfyUI URL, API token, or key
 3. **Done** — restart Claude Code once more, then start generating
 
@@ -232,15 +232,15 @@ Cloud API with multiple models: Nanobanana 2, Seedream 5.0, GPT image 1.5, and m
 { "meigenApiToken": "meigen_sk_..." }
 ```
 
-### OpenAI-Compatible API
+### Bring Your Own API (OpenAI-Compatible)
 
-Bring your own API key for OpenAI (gpt-image-1.5), Together AI, Fireworks AI, or any compatible service.
+Connect **any** image generation API that follows the OpenAI format — Together AI, Fireworks AI, DeepInfra, SiliconFlow, or your own endpoint. Just provide your key, base URL, and model name:
 
 ```json
 {
   "openaiApiKey": "sk-...",
-  "openaiBaseUrl": "https://api.openai.com",
-  "openaiModel": "gpt-image-1.5"
+  "openaiBaseUrl": "https://api.together.xyz/v1",
+  "openaiModel": "black-forest-labs/FLUX.1-schnell"
 }
 ```
 
@@ -269,9 +269,9 @@ Environment variables take priority over the config file.
 | Variable | Description |
 |----------|-------------|
 | `MEIGEN_API_TOKEN` | MeiGen platform token |
-| `OPENAI_API_KEY` | OpenAI / compatible API key |
-| `OPENAI_BASE_URL` | API base URL (default: `https://api.openai.com`) |
-| `OPENAI_MODEL` | Default model (default: `gpt-image-1.5`) |
+| `OPENAI_API_KEY` | Your API key (any OpenAI-compatible provider) |
+| `OPENAI_BASE_URL` | API base URL — change this to use Together AI, Fireworks AI, etc. |
+| `OPENAI_MODEL` | Model name at your provider (e.g., `gpt-image-1.5`, `flux-schnell`) |
 | `COMFYUI_URL` | ComfyUI server URL (default: `http://localhost:8188`) |
 
 ---
